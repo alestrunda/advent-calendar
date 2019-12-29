@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xml:lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="" />
+    <meta name="author" content="Aleš Trunda, alestrunda.eu" />
+    <meta name="robots" content="index, follow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:title" content="Page Title" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:description" content="" />
+    <meta name="twitter:image" content="" />
+    <meta name="twitter:title" content="Page Title" />
+    <meta name="twitter:url" content="" />
+
+    <link rel="shortcut icon" href="favicon.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon-152.png" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
+    <link rel="stylesheet" href="main.css" />
+
+    <title>Advent Calendar</title>
+  </head>
+
+  <body>
+    <div id="calendar">
+      <img src="images/roberto-nickson-5PQn41LFsQk-unsplash.jpg" alt="" />
+      <div
+        :class="'field field--' + day.number + ' ' + (daysActive.includes(day.number) ? 'active' : '')"
+        :style="{top: day.top, left: day.left}"
+        v-for="day in days"
+        v-on:click="toggle(day.number)"
+      >
+        <div class="field__img">
+          <img
+            class="field__icon"
+            :src="'images/icons/' + day.number + '.svg'"
+            alt=""
+          />
+        </div>
+        <div
+          class="field__inner"
+          :style="{backgroundPosition: day.backgroundPosition, backgroundSize: day.backgroundSize}"
+        >
+          <p class="field__text">
+            {{ day.number }}
+          </p>
+          <div class="field__edge"></div>
+          <div class="field__backside"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

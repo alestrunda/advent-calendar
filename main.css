@@ -1,0 +1,118 @@
+#calendar {
+  position: relative;
+  font-family: 'Open Sans', sans-serif;
+  color: #fff;
+}
+
+#calendar *,
+#calendar *::after {
+  box-sizing: border-box;
+}
+
+#calendar > img {
+  display: block;
+  width: 100%;
+}
+
+#calendar .field__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+  background-color: #df4949;
+  box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.9) inset;
+  overflow: hidden;
+}
+
+#calendar .field__img img {
+  display: block;
+  width: 100%;
+}
+
+#calendar .field {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+#calendar .field.active {
+  cursor: default;
+}
+
+#calendar .field__backside {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#1a639d, #0d2646);
+  transform: rotateY(-180deg) translateZ(1px);
+}
+
+#calendar .field__edge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background-color: #333;
+  transform: rotateY(-90deg) translateZ(-1px);
+}
+
+#calendar .field__inner::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px dashed #fff;
+  transition: all 0.3s ease-out;
+  content: '';
+}
+
+#calendar .field.active .field__inner {
+  transform: rotateY(-100deg) translateZ(1px);
+}
+
+#calendar .field:hover .field__inner::after {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+#calendar .field__inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: 100vw auto;
+  background-image: url('images/roberto-nickson-5PQn41LFsQk-unsplash.jpg');
+  display: flex;
+  transition: transform 1s ease-out, box-shadow 1s ease-out;
+  transform-style: preserve-3d;
+  transform-origin: left center;
+}
+
+#calendar .field.active .field__inner {
+  box-shadow: 2px 0 2px rgba(0, 0, 0, 0.3), 0 0 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+#calendar .field__text {
+  position: relative;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  font-size: 4em;
+  text-shadow: 0 0 4px #000;
+  z-index: 2;
+}
+
+#calendar .field__icon {
+  display: block;
+  width: 100%;
+  height: auto;
+}

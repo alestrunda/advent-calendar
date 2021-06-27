@@ -1,8 +1,10 @@
 # Advent Calendar
 
-Tiny app for advent calendar. Opened fields are saved permanently to local storage.
+Tiny app for an advent calendar with nice flipping animation. Using static Vue.js version (from CDN). Opened fields are saved permanently to local storage.
 
-[Online](https://advent-calendar2.netlify.com/)
+**[Online](https://advent-calendar2.netlify.com/)**
+
+## Screenshots
 
 ![screen](http://files.alestrunda.cz/advent-calendar/screen.jpg)
 
